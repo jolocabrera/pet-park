@@ -1,0 +1,50 @@
+{
+    "activeFile": "assets/pet-park-Tiled.tmx",
+    "expandedProjectPaths": [
+        "assets",
+        "/Users/jolocabrera/Downloads/AnimalsFarmAndPuzzlePack",
+        "."
+    ],
+    "fileStates": {
+        "": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "/Users/jolocabrera/Library/Group Containers/group.com.apple.notes/Accounts/A2B2E6C9-DB60-4A0D-BE3C-277A3A006290/Media/2A471410-2A64-4210-A4B1-1F6F9C521ABF/pet-park-Tiled.tmx": {
+            "scale": 0.45125,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 361.218836565097,
+                "y": 300.2770083102493
+            }
+        },
+        "/Users/jolocabrera/Library/Group Containers/group.com.apple.notes/Accounts/A2B2E6C9-DB60-4A0D-BE3C-277A3A006290/Media/2A471410-2A64-4210-A4B1-1F6F9C521ABF/pet-park-Tiled.tmx#scenesheet": {
+            "scaleInDock": 1
+        },
+        "assets/pet-park-Tiled.tmx": {
+            "scale": 1.18,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 282.6271186440678,
+                "y": 297.8813559322034
+            }
+        },
+        "assets/pet-park-Tiled.tmx#scenesheet": {
+            "scaleInDock": 1.4323
+        },
+        "assets/scenesheet.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        }
+    },
+    "last.exportedFilePath": "/Users/jolocabrera/Desktop",
+    "openFiles": [
+        "assets/pet-park-Tiled.tmx"
+    ],
+    "project": "pet-park.tiled-project",
+    "recentFiles": [
+        "assets/pet-park-Tiled.tmx",
+        "/Users/jolocabrera/Library/Group Containers/group.com.apple.notes/Accounts/A2B2E6C9-DB60-4A0D-BE3C-277A3A006290/Media/2A471410-2A64-4210-A4B1-1F6F9C521ABF/pet-park-Tiled.tmx",
+        "assets/scenesheet.tsx"
+    ]
+}
