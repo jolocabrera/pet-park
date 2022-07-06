@@ -17,16 +17,16 @@ Pet.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    species: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     description: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
         isURL: true,
       },
-    },
-    species: {
-      type: DataTypes.STRING,
-      allowNull: false,
     },
     user_id: {
       type: DataTypes.INTEGER,

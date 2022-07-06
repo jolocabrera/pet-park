@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User } = require("../../models");
+const { User, Pet } = require("../../models");
 
 // GET /api/users (gets all users)
 router.get("/", (req, res) => {
@@ -21,6 +21,12 @@ router.get("/:id", (req, res) => {
     where: {
       id: req.params.id,
     },
+    include: [
+      {
+        model: Pet,
+        attributes: ["id", "name", "species", "description", "created_at"],
+      },
+    ],
   })
     .then((dbUserData) => {
       if (!dbUserData) {
@@ -69,8 +75,14 @@ router.post("/login", (req, res) => {
       res.status(400).json({ message: "Incorrect password!" });
       return;
     }
+    req.session.save(() => {
+      // declare session variables
+      req.session.user_id = dbUserData.id;
+      req.session.username = dbUserData.username;
+      req.session.loggedIn = true;
 
-    res.json({ user: dbUserData, message: "You are now logged in!" });
+      res.json({ user: dbUserData, message: "You are now logged in!" });
+    });
   });
 });
 
