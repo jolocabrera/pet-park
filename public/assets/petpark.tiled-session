@@ -1,0 +1,40 @@
+{
+    "activeFile": "/Users/jolocabrera/Desktop/projects/pet-park/public/assets/petpark.tmx",
+    "expandedProjectPaths": [
+    ],
+    "file.lastUsedOpenFilter": "All Files (*)",
+    "fileStates": {
+        "/Users/jolocabrera/Desktop/petpark.tmj": {
+            "scale": 0.9952,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 517.4839228295821,
+                "y": 344.1519292604502
+            }
+        },
+        "/Users/jolocabrera/Desktop/petpark.tmj#scenesheet": {
+            "scaleInDock": 1
+        },
+        "/Users/jolocabrera/Desktop/projects/pet-park/public/assets/petpark.tmx": {
+            "scale": 0.45125,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 361.218836565097,
+                "y": 300.2770083102493
+            }
+        },
+        "/Users/jolocabrera/Desktop/projects/pet-park/public/assets/petpark.tmx#scenesheet": {
+            "scaleInDock": 1
+        }
+    },
+    "last.imagePath": "/Users/jolocabrera/Desktop/projects/pet-park/public/assets/tiledmap",
+    "openFiles": [
+        "/Users/jolocabrera/Desktop/petpark.tmj",
+        "/Users/jolocabrera/Desktop/projects/pet-park/public/assets/petpark.tmx"
+    ],
+    "project": "petpark.tiled-project",
+    "recentFiles": [
+        "/Users/jolocabrera/Desktop/petpark.tmj",
+        "/Users/jolocabrera/Desktop/projects/pet-park/public/assets/petpark.tmx"
+    ]
+}
