@@ -40,6 +40,18 @@ header nav ul li a {
     font-size: 22px;
 }
 
+/* apply styles to the login button */
+.btn {
+width: 100%;
+cursor: pointer;
+padding: 15px;
+border: 0;
+border-radius: 5px;
+background-color: rgba(75, 8, 109, 0.621);
+color: white;
+
+}
+
 /* apply styles to the about-the-game section */
 .intro  {
   width: 900px;
