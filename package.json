@@ -19,7 +19,11 @@
   },
   "homepage": "https://github.com/jolocabrera/pet-park#readme",
   "dependencies": {
+    "bcrypt": "^5.0.1",
+    "dotenv": "^16.0.1",
     "express": "^4.18.1",
-    "phaser": "^3.55.2"
+    "mysql2": "^2.3.3",
+    "phaser": "^3.55.2",
+    "sequelize": "^6.21.2"
   }
 }
