@@ -1,7 +1,7 @@
 const express = require("express");
-const path = require("path");
 const apiRoutes = require("./routes/apiRoutes");
 const htmlRoutes = require("./routes/htmlRoutes");
+const sequelize = require("./config/connection");
 
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -14,6 +14,7 @@ app.use(express.static("public"));
 app.use("/api", apiRoutes);
 app.use("/", htmlRoutes);
 
-app.listen(PORT, () => {
-  console.log(`API server now on port ${PORT}!`);
+// turn on connection to db and server
+sequelize.sync({ force: true }).then(() => {
+  app.listen(PORT, () => console.log("Now listening"));
 });
