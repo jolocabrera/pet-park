@@ -29,5 +29,5 @@ async function createPetFormHandler(event) {
 }
 
 document
-  .querySelector(".signup-form")
-  .addEventListener("submit", signupFormHandler);
+  .querySelector(".createpet-form")
+  .addEventListener("submit", createPetFormHandler);

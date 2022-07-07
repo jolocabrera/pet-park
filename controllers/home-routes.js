@@ -4,15 +4,19 @@ const { User, Pet } = require("../models");
 
 // Main Page Route
 router.get("/", (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect("/dashboard");
+    return;
+  }
   res.render("homepage");
 });
 
 // Login Page Route (home page)
 router.get("/login", (req, res) => {
-  //   if (req.session.loggedIn) {
-  //     res.redirect("/");
-  //     return;
-  //   }
+  // if (req.session.loggedIn) {
+  //   res.redirect("/dashboard");
+  //   return;
+  // }
 
   res.render("login");
 });
