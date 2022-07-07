@@ -3,28 +3,59 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pet Park</title>
-    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <title>PET PARK!</title>
+    <link rel="stylesheet" href="/assets/stylesheets/style.css" />
     <script
       src="https://cdn.jsdelivr.net/npm/phaser@3.15.1/dist/phaser-arcade-physics.min.js"
     ></script>
+    <script
+      src="https://kit.fontawesome.com/1b91a1df46.js"
+      crossorigin="anonymous"
+    ></script>
+
   </head>
 
   <body>
     <div class="wrapper">
       <header>
-        <h1>
+        {{! <h1>
           <a href="/">Pet Park</a>
         </h1>
         <nav>
           <button id="logout" class="btn-no-style">logout</button>
+        </nav> }}
+        <a href="/"><img
+            src="./assets/images/Logo.svg"
+            alt="pet-park-logo"
+          /></a>
+        <nav>
+          <!-- Unordered list element -->
+          <ul>
+            <!-- List item element -->
+            {{! <li>
+                        <a href="#about-pet-park"><i class="fa-solid fa-gamepad fa-2xl"></i></a>
+                    </li>
+                    <li>
+                        <a href="#comments"><i class="fa-solid fa-comment fa-2xl"></i></a>
+                    </li>
+                    <li>
+                            <!-- link to the login form -->
+                            <button class="btn" onclick="window.location.href = '/">Login</button>  
+                     </li> }}
+            <li>
+              <button id="logout" class="btn">logout</button>
+            </li>
+          </ul>
         </nav>
       </header>
       <main>
         {{{body}}}
       </main>
       <footer>
-        Thanks for visiting!
+        <div>
+          <br />
+          &copy; 2022 Pet Park, Inc.
+        </div>
       </footer>
     </div>
     <script src="/javascript/logout.js"></script>
