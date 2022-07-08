@@ -2,6 +2,7 @@ var config = {
   type: Phaser.AUTO,
   width: 720,
   height: 600,
+  parent: "phaser-map",
   physics: {
     default: "arcade",
     arcade: {
@@ -29,93 +30,119 @@ function preload() {
   // this.load.image('ground', 'assets/platform.png');
   // this.load.image('star', 'assets/star.png');
   // this.load.image('bomb', 'assets/bomb.png');
-  this.load.spritesheet("dude", "assets/dude.png", {
+  this.load.spritesheet("dude", "assets/sprites/dude.png", {
     frameWidth: 32,
     frameHeight: 48,
+  });
+  this.load.spritesheet("cat", "assets/sprites/cat.png", {
+    frameWidth: 128,
+    frameHeight: 128,
+  });
+  this.load.spritesheet("chick", "assets/sprites/chick.png", {
+    frameWidth: 128,
+    frameHeight: 128,
+  });
+  this.load.spritesheet("fox", "assets/sprites/fox.png", {
+    frameWidth: 128,
+    frameHeight: 128,
+  });
+  this.load.spritesheet("mouse", "assets/sprites/mouse.png", {
+    frameWidth: 128,
+    frameHeight: 128,
+  });
+  this.load.spritesheet("pig", "assets/sprites/pig.png", {
+    frameWidth: 128,
+    frameHeight: 128,
+  });
+  this.load.spritesheet("rabbit", "assets/sprites/rabbit.png", {
+    frameWidth: 128,
+    frameHeight: 128,
   });
   this.load.image("tiles", "../assets/scenesheet.png");
   this.load.tilemapTiledJSON("map", "../assets/petpark.json");
 }
 
-function create() {
-  // this.add.image(360,300, 'tiles');
-  //load map from JSON file and load tile images from bmp image
-  const map = this.make.tilemap({ key: "map" });
-  const tileset = map.addTilesetImage("scenesheet", "tiles");
+// function create() {
+//   // this.add.image(360,300, 'tiles');
+//   //load map from JSON file and load tile images from bmp image
+//   const map = this.make.tilemap({ key: "map" });
+//   const tileset = map.addTilesetImage("scenesheet", "tiles");
 
-  //create map layers
-  const groundLayer = map.createStaticLayer("Ground", tileset);
-  const flowersLayer = map.createStaticLayer("FLOWERS", tileset);
-  const midLayer = map.createStaticLayer("Mid", tileset);
-  const topLayer = map.createStaticLayer("Top", tileset);
+//   //create map layers
+//   const collideLayer = map.createStaticLayer("collide", tileset);
+//   const groundLayer = map.createStaticLayer("Ground", tileset);
+//   const flowersLayer = map.createStaticLayer("FLOWERS", tileset);
+//   const midLayer = map.createStaticLayer("Mid", tileset);
+//   const topLayer = map.createStaticLayer("Top", tileset);
 
-  player = this.physics.add.sprite(100, 450, "dude");
+//   player = this.physics.add.sprite(100, 450, "cat");
 
-  player.setBounce(0.2);
-  player.setCollideWorldBounds(true);
+//   player.setBounce(0.2);
+//   player.setCollideWorldBounds(true);
+//   player.setScale(0.3);
+  
 
-  this.anims.create({
-    key: "left",
-    frames: this.anims.generateFrameNumbers("dude", { start: 0, end: 3 }),
-    frameRate: 10,
-    repeat: -1,
-  });
+//   this.anims.create({
+//     key: "left",
+//     frames: [{ key: "cat", frame: 2 }],
+//     frameRate: 10,
+//     repeat: -1,
+//   });
 
-  this.anims.create({
-    key: "stop",
-    frames: [{ key: "dude", frame: 4 }],
-    frameRate: 20,
-  });
+//   this.anims.create({
+//     key: "stop",
+//     frames: [{ key: "cat", frame: 1 }],
+//     frameRate: 20,
+//   });
 
-  this.anims.create({
-    key: "right",
-    frames: this.anims.generateFrameNumbers("dude", { start: 5, end: 8 }),
-    frameRate: 10,
-    repeat: -1,
-  });
+//   this.anims.create({
+//     key: "right",
+//     frames: [{ key: "cat", frame: 3 }],
+//     frameRate: 10,
+//     repeat: -1,
+//   });
 
-  this.anims.create({
-    key: "down",
-    frames: this.anims.generateFrameNumbers("dude", { start: 5, end: 8 }),
-    frameRate: 10,
-    repeat: -1,
-  });
+//   this.anims.create({
+//     key: "down",
+//     frames: [{ key: "cat", frame: 1 }],
+//     frameRate: 10,
+//     repeat: -1,
+//   });
 
-  this.anims.create({
-    key: "up",
-    frames: this.anims.generateFrameNumbers("dude", { start: 5, end: 8 }),
-    frameRate: 10,
-    repeat: -1,
-  });
+//   this.anims.create({
+//     key: "up",
+//     frames: [{ key: "cat", frame: 4 }],
+//     frameRate: 10,
+//     repeat: -1,
+//   });
 
-  //set colliders
-  topLayer.setCollisionByProperty({ collide: true });
-  this.physics.add.collider(player, topLayer);
+//   //set colliders
+//   collideLayer.setCollisionByProperty({ collide: true });
+//   this.physics.add.collider(player, collideLayer);
 
-  midLayer.setCollisionByProperty({ collide: true });
-  this.physics.add.collider(player, midLayer);
 
-  cursors = this.input.keyboard.createCursorKeys();
 
-  // stars = this.physics.add.group({
-  //     key: 'star',
-  //     repeat: 11,
-  //     setXY: { x: 12, y: 0, stepX: 70 }
-  // });
+//   cursors = this.input.keyboard.createCursorKeys();
 
-  // stars.children.iterate(function (child) {
-  //     child.setBounceY(Phaser.Math.FloatBetween(0.4, 0.8));
-  // });
+//   // stars = this.physics.add.group({
+//   //     key: 'star',
+//   //     repeat: 11,
+//   //     setXY: { x: 12, y: 0, stepX: 70 }
+//   // });
 
-  // this.physics.add.collider(stars, platforms);
-  // this.physics.add.overlap(player, stars, collectStar, null, this);
+//   // stars.children.iterate(function (child) {
+//   //     child.setBounceY(Phaser.Math.FloatBetween(0.4, 0.8));
+//   // });
 
-  // scoreText = this.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#000'});
+//   // this.physics.add.collider(stars, platforms);
+//   // this.physics.add.overlap(player, stars, collectStar, null, this);
 
-  // bombs = this.physics.add.group();
-  // this.physics.add.collider(bombs, platforms);
-  // this.physics.add.collider(player, bombs, hitBomb, null, this);
-}
+//   // scoreText = this.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#000'});
+
+//   // bombs = this.physics.add.group();
+//   // this.physics.add.collider(bombs, platforms);
+//   // this.physics.add.collider(player, bombs, hitBomb, null, this);
+// }
 
 function update() {
   if (cursors.left.isDown) {
