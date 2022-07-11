@@ -42,8 +42,9 @@ router.get("/dashboard", (req, res) => {
       const userPet = pets.find((obj) => {
         return obj.user_id === req.session.user_id;
       })
+      const otherPets = pets.filter(function( obj ) {return obj.id !== req.session.user_id});
       // const pets = dbPetData.get({ plain: true });
-      res.render("dashboard", { pets,userPet, loggedIn: req.session.loggedIn });
+      res.render("dashboard", { pets,userPet,otherPets, loggedIn: req.session.loggedIn });
     })
     .catch((err) => {
       console.log(err);

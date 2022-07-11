@@ -57,6 +57,7 @@
 
 // var platforms;
 var player;
+var npc;
 // var stars;
 // var bombs;
 var score = 0;
@@ -113,6 +114,18 @@ function create() {
   const midLayer = map.createStaticLayer("Mid", tileset);
   const topLayer = map.createStaticLayer("Top", tileset);
 
+  {{#each otherPets as |pets|}}
+  xcoord = Phaser.Math.Between(100, 620)
+  ycoord = Phaser.Math.Between(100, 500)
+  var npcContainer = this.add.container(xcoord,ycoord)
+  npc = this.physics.add.image(0, 0, {{pets.species}})
+  var npcName = this.add.text(-15, 15, "{{pets.name}}", { fontFamily: 'Georgia, "Goudy Bookletter 1911", Times, serif', fontSize: '10px' });
+  npc.setScale(0.3)
+  npc.setFrame(1)
+  npcContainer.add(npc);
+  npcContainer.add(npcName);
+  {{/each}}
+
   player = this.physics.add.sprite(100, 450, character);
 
   player.setBounce(0.2);
@@ -159,14 +172,10 @@ function create() {
   this.physics.add.collider(player, collideLayer);
 
 
-
   cursors = this.input.keyboard.createCursorKeys();
 
-  // stars = this.physics.add.group({
-  //     key: 'star',
-  //     repeat: 11,
-  //     setXY: { x: 12, y: 0, stepX: 70 }
-  // });
+
+   
 
   // stars.children.iterate(function (child) {
   //     child.setBounceY(Phaser.Math.FloatBetween(0.4, 0.8));
