@@ -3,11 +3,25 @@
 </div>
 <div>
   <ol>
+    {{#each pets as |pets|}}
+    <li>
+      <article class="other-users">
+        <div class="title">
+          <h2>
+          <a href="/api/users/{{pets.user_id}}" target="_blank">{{pets.name}}</a>
+          </h2>
+          <h4>Species: {{pets.species}}</h4>
+          <p>About Me: {{pets.description}}</p>
+        </div>
+        <section></section>
+      </article>
+    </li>
+    {{/each}}
    
-    {{!-- <li>{{ username }}</li> --}}
+    
   </ol>
 </div>
-{{!-- <div>ChatBox Goes Here {{pets.species}} </div> --}}
+<div>ChatBox Goes Here {{userPet.species}} </div>
 
 
 {{!-- phaser map script --}}
@@ -18,7 +32,7 @@
   var mouse = "mouse";
   var pig = "pig";
   var rabbit = "rabbit";
-  var character = rabbit;
+  var character = {{userPet.species}};
   var config = {
   type: Phaser.AUTO,
   width: 720,

@@ -8,7 +8,6 @@ User.hasOne(Pet, {
 
 Pet.belongsTo(User, {
   foreignKey: "user_id",
-  allowNull: false
 });
 
 module.exports = { User, Pet };
