@@ -3,14 +3,22 @@
 </div>
 <div>
   <ol>
+   
     {{!-- <li>{{ username }}</li> --}}
   </ol>
 </div>
-<div>ChatBox Goes Here</div>
+{{!-- <div>ChatBox Goes Here {{pets.species}} </div> --}}
 
 
 {{!-- phaser map script --}}
   <script>
+  var cat = "cat";
+  var chick = "chick";
+  var fox = "fox";
+  var mouse = "mouse";
+  var pig = "pig";
+  var rabbit = "rabbit";
+  var character = cat;
   var config = {
   type: Phaser.AUTO,
   width: 720,
@@ -88,7 +96,7 @@ function create() {
   const midLayer = map.createStaticLayer("Mid", tileset);
   const topLayer = map.createStaticLayer("Top", tileset);
 
-  player = this.physics.add.sprite(100, 450, "cat");
+  player = this.physics.add.sprite(100, 450, character);
 
   player.setBounce(0.2);
   player.setCollideWorldBounds(true);
@@ -97,34 +105,34 @@ function create() {
 
   this.anims.create({
     key: "left",
-    frames: [{ key: "cat", frame: 2 }],
+    frames: [{ key: character, frame: 2 }],
     frameRate: 10,
     repeat: -1,
   });
 
   this.anims.create({
     key: "stop",
-    frames: [{ key: "cat", frame: 1 }],
+    frames: [{ key: character, frame: 1 }],
     frameRate: 20,
   });
 
   this.anims.create({
     key: "right",
-    frames: [{ key: "cat", frame: 3 }],
+    frames: [{ key: character, frame: 3 }],
     frameRate: 10,
     repeat: -1,
   });
 
   this.anims.create({
     key: "down",
-    frames: [{ key: "cat", frame: 1 }],
+    frames: [{ key: character, frame: 1 }],
     frameRate: 10,
     repeat: -1,
   });
 
   this.anims.create({
     key: "up",
-    frames: [{ key: "cat", frame: 4 }],
+    frames: [{ key: character, frame: 4 }],
     frameRate: 10,
     repeat: -1,
   });

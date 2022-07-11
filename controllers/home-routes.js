@@ -38,8 +38,10 @@ router.get("/dashboard", (req, res) => {
     ],
   })
     .then((dbPetData) => {
+      console.log(dbPetData);
       // pass a single pet object into the homepage template
       const pets = dbPetData.map((pet) => pet.get({ plain: true }));
+      // const pets = dbPetData.get({ plain: true });
       res.render("dashboard", { pets });
     })
     .catch((err) => {
