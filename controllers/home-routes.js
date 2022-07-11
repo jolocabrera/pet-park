@@ -29,11 +29,11 @@ router.get("/createpet", (req, res) => {
 router.get("/dashboard", (req, res) => {
   console.log(req.session);
   Pet.findAll({
-    attributes: ["id", "name", "species"],
+    attributes: ["id", "name", "species","description"],
     include: [
       {
         model: User,
-        attributes: ["username"],
+        attributes: ["username","user_id"],
       },
     ],
   })
