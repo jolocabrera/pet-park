@@ -19,14 +19,7 @@ async function signupFormHandler(event) {
     // check the response status
     if (response.ok) {
       console.log("success");
-      req.session.save(() => {
-        // declare session variables
-        req.session.user_id = dbUserData.id;
-        req.session.username = dbUserData.username;
-        req.session.loggedIn = true;
-  
-        res.json({ user: dbUserData, message: "You are now logged in!" });
-      });
+      
       document.location.replace("/createpet");
     } else {
       alert(response.statusText);

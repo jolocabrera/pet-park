@@ -55,7 +55,7 @@ router.post("/", (req, res) => {
     name: req.body.name,
     species: req.body.species,
     description: req.body.description,
-    user_id: req.body.user_id,
+    user_id: req.session.user_id,
   })
     .then((dbPetData) => res.json(dbPetData))
     .catch((err) => {
