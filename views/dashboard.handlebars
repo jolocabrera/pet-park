@@ -1,4 +1,3 @@
-{{!-- {{{ pets }}} --}}
 <div id="phaser-map">
 </div>
 <div>
@@ -6,9 +5,13 @@
     {{#each pets as |pets|}}
     <li>
       <article class="other-users">
+                <a href="/user/{{pets.user_id}}" target="_blank"><img
+            src="./assets/images/{{pets.species}}.png"
+            alt="pet-avatar"
+          /></a>
         <div class="title">
           <h2>
-          <a href="/api/users/{{pets.user_id}}" target="_blank">{{pets.name}}</a>
+          <a href="/user/{{pets.user_id}}" target="_blank">{{pets.name}}</a>
           </h2>
           <h4>Species: {{pets.species}}</h4>
           <p>About Me: {{pets.description}}</p>

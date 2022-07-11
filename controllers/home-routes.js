@@ -51,4 +51,32 @@ router.get("/dashboard", (req, res) => {
     });
 });
 
+//single user page
+router.get("/user/:id", (req, res) => {
+  console.log(req.session);
+  Pet.findOne({
+    where: {
+      user_id: req.params.id
+    },
+    attributes: ["id", "name", "species","description","user_id"],
+    include: [
+      {
+        model: User,
+        attributes: ["username"],
+      },
+    ],
+  })
+    .then((dbPetData) => {
+      // pass a single pet object into the homepage template
+      const pet = dbPetData.get({plain: true})
+      res.render("userpage", { pet, loggedIn: req.session.loggedIn });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+
+
 module.exports = router;
