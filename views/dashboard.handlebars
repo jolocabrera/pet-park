@@ -1,7 +1,13 @@
+
+<div id="dashboard-container">
+
 <div id="phaser-map">
 </div>
-<div>
-  <ol>
+
+
+<div id="list-container">
+  <h2>Meet Other Pets!</h2>
+  <ul id="pet-list">
     {{#each pets as |pets|}}
     <li>
       <article class="other-users">
@@ -14,7 +20,7 @@
           <a href="/user/{{pets.user_id}}" target="_blank">{{pets.name}}</a>
           </h2>
           <h4>Species: {{pets.species}}</h4>
-          <p>About Me: {{pets.description}}</p>
+          {{!-- <p>About Me: {{pets.description}}</p> --}}
         </div>
         <section></section>
       </article>
@@ -22,10 +28,11 @@
     {{/each}}
    
     
-  </ol>
+  </ul>
 </div>
-<div>ChatBox Goes Here {{userPet.species}} </div>
+<div id="chatbox-container">ChatBox Goes Here {{userPet.species}} </div>
 
+</div>
 
 {{!-- phaser map script --}}
   <script>

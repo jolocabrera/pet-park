@@ -1,4 +1,9 @@
 /* to override default settings */
+:root {
+  --primary-color: blueviolet;
+  --secondary-color: rgb(215, 131, 229);
+  --tertiary-color: #39a6b2;
+}
 * {
   margin: 0;
   padding: 0;
@@ -87,3 +92,77 @@ footer div {
 #phaser-map {
   display: inline;
 }
+
+/* User page styling */
+.pet-card {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  margin: 20px;
+  background: var(--secondary-color);
+  color: var(--primary-color);
+  flex: 1;
+  width: 50%;
+  border-radius: 15px;
+  padding: 20px;
+
+}
+
+.pet-bio {
+  padding: 25px;
+  line-height: 1.3;
+}
+
+.pet-bio h3 {
+  font-size: 28px;
+  color: black;
+}
+
+.pet-bio h4 {
+  font-weight: lighter;
+  font-size: 22px;
+  margin-bottom: 15px;
+  color: rgba(0,0,0,0.5);
+}
+
+.pet-bio p {
+  font-size: 17px;
+  color: black;
+}
+
+
+/* Dashboard Styling */
+/*parent container */
+#dashboard-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+/* Child containers*/
+#phaser-map{
+  margin: 20px;
+  height: 650px;
+}
+
+#list-container{
+  margin: 20px;
+  height: 600px;
+  overflow: auto;
+  width: 720px;
+}
+
+#pet-list {
+  list-style: none;
+}
+
+#pet-list li {
+  padding: 20px;
+}
+
+#chatbox-container{
+
+}
+
+
+

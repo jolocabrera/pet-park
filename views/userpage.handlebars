@@ -1,8 +1,11 @@
-<div>
-{{pet.id}}
-{{pet.name}}
-{{pet.species}}
-{{pet.description}}
-{{pet.user.username}}
-{{pet.user_id}}
-</div>
+
+<article class="pet-card">
+    <img src="/assets/images/{{pet.species}}.png" alt="Pet Avatar" />
+    <div class="pet-bio">
+        <h3 class="pet-name">{{pet.name}}</h3>
+        <h4 class="pet-species">{{pet.species}}</h4>
+        <p>
+            {{pet.description}}
+        </p>
+    </div>
+</article>
