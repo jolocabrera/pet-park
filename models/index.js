@@ -2,7 +2,7 @@ const User = require("./User");
 const Pet = require("./Pet");
 
 //create associations
-User.belongsTo(Pet, {
+User.hasOne(Pet, {
   foreignKey: "user_id",
 });
 

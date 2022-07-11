@@ -5,7 +5,7 @@ const { Pet, User } = require("../../models");
 router.get("/", (req, res) => {
   console.log("=================");
   Pet.findAll({
-    attributes: ["id", "name", "species", "description", "created_at"],
+    attributes: ["id", "name", "species", "description", "created_at","user_id"],
     order: [["created_at", "DESC"]],
     include: [
       {
@@ -55,7 +55,7 @@ router.post("/", (req, res) => {
     name: req.body.name,
     species: req.body.species,
     description: req.body.description,
-    user_id: req.body.user_id,
+    user_id: req.session.user_id,
   })
     .then((dbPetData) => res.json(dbPetData))
     .catch((err) => {

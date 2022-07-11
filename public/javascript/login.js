@@ -19,6 +19,7 @@ async function signupFormHandler(event) {
     // check the response status
     if (response.ok) {
       console.log("success");
+      
       document.location.replace("/createpet");
     } else {
       alert(response.statusText);
@@ -57,3 +58,13 @@ async function loginFormHandler(event) {
 document
   .querySelector(".login-form")
   .addEventListener("submit", loginFormHandler);
+
+
+//**need to fix, removes pre written text from form inputs */
+const labels = document.querySelectorAll('.form-control label')
+labels.forEach(label => {
+    label.innerHTML = label.innerText
+    .split('')
+    .map((letter, idx) => `<span style="transition-delay:${idx * 50}ms">${letter}</span>`)
+    .join('')
+})
