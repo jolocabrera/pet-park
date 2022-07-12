@@ -1,6 +1,6 @@
 # Pet Park
 
-A game where you get to have virtual pets! 
+A game where you get to have virtual pets without the full commitment. Check out our game and stay tunes for any new changes coming soon! 
 
 ## Table of Contents
 
@@ -22,7 +22,7 @@ A game where you get to have virtual pets!
 
 ## Description
 
-Pet park is an application which allows users to have their own virtual pet! You are able to customize each pet with different characteristics, and you can also socialize with other users through a chat box. 
+Pet park is an application which allows users to have their own virtual pet! You are able to customize each pet with different characteristics, and you can also socialize with other users through a chat box. Create as many pets as you'd like! 
 
 ## User Story
 
