@@ -163,7 +163,12 @@ footer div {
   margin: 20px;
   height: 600px;
   overflow: auto;
-  width: 720px;
+  width: 300px;
+}
+@media screen and (max-width: 1200px) {
+  #list-container{
+    width: 200px;
+  }
 }
 
 #pet-list {
