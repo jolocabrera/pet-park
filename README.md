@@ -1,6 +1,6 @@
 # Pet Park
 
-A game where you get to have virtual pets! 
+A game where you get to have virtual pets without the full commitment. In this game, users get to pick their own pets and use that pet to interact with other users who have also created pets. Users will get to interact thorugh a chatbox. 
 
 ## Table of Contents
 
