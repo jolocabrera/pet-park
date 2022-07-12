@@ -89,3 +89,13 @@ body {
   color: rgb(241, 97, 157);
   transform: translateY(-30px);
 }
+
+.login-form ::placeholder {
+  color: white;
+  font-size: 18px;
+}
+
+.signup-form ::placeholder{
+  color: white;
+  font-size: 18px;
+}

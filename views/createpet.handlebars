@@ -1,10 +1,12 @@
+<link rel="stylesheet" href="./assets/stylesheets/secondary-styles.css" />
+
 <h2>Create Your Pet</h2>
-<form class="createpet-form">
-  <div>
-    <label for="name-signup">Name:</label>
-    <input type="text" id="name-signup" />
+<form class="createpet-form login-form">
+  <div class="form-control">
+    <label for="name-signup"></label>
+    <input type="text" id="name-signup" placeholder="Name:" />
   </div>
-  <div>
+  <div class="form-control-select">
     <label for="species-signup">Species:</label>
     <select type="select" id="species-signup" >
       <option value ="" >Select A Species</option>
@@ -16,12 +18,12 @@
       <option value = "rabbit">Rabbit</option>
     </select>
   </div>
-  <div>
-    <label for="description-signup">Description:</label>
-    <input type="text" id="description-signup" />
+  <div class="form-control">
+    <label for="description-signup"></label>
+    <input type="text" id="description-signup" placeholder="Description:" />
   </div>
   <div>
-    <button type="submit">CREATE</button>
+    <button type="submit" class="btn">CREATE</button>
   </div>
 </form>
 

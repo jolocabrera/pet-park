@@ -1,8 +1,20 @@
 
+<div id="your-pet-link-container">
+  <div id="your-pet-link">
+  <h2>
+    <a href="/user/{{userPet.user_id}}" target="_blank"><button
+      class="btn"
+      style="font-size: larger"
+    >Visit Your Pet!</button></a>
+  </h2>
+  </div>
+</div>
+
 <div id="dashboard-container">
 
 <div id="phaser-map">
 </div>
+
 
 
 <div id="list-container">
@@ -62,20 +74,13 @@
   },
 };
 
-// var platforms;
+
 var player;
 var npc;
-// var stars;
-// var bombs;
-var score = 0;
-var scoreText;
 var game = new Phaser.Game(config);
 
+//preload all assets
 function preload() {
-  // this.load.image('sky', '/assets/sky.png');
-  // this.load.image('ground', 'assets/platform.png');
-  // this.load.image('star', 'assets/star.png');
-  // this.load.image('bomb', 'assets/bomb.png');
   this.load.spritesheet("dude", "assets/sprites/dude.png", {
     frameWidth: 32,
     frameHeight: 48,
@@ -109,7 +114,6 @@ function preload() {
 }
 
 function create() {
-  // this.add.image(360,300, 'tiles');
   //load map from JSON file and load tile images from bmp image
   const map = this.make.tilemap({ key: "map" });
   const tileset = map.addTilesetImage("scenesheet", "tiles");
@@ -121,6 +125,7 @@ function create() {
   const midLayer = map.createStaticLayer("Mid", tileset);
   const topLayer = map.createStaticLayer("Top", tileset);
 
+// append other pets to game
   {{#each otherPets as |pets|}}
   xcoord = Phaser.Math.Between(100, 620)
   ycoord = Phaser.Math.Between(100, 500)
@@ -133,6 +138,7 @@ function create() {
   npcContainer.add(npcName);
   {{/each}}
 
+//append users pet to game
   player = this.physics.add.sprite(100, 450, character);
 
   player.setBounce(0.2);
@@ -140,6 +146,7 @@ function create() {
   player.setScale(0.3);
   
 
+//create animations for user movement
   this.anims.create({
     key: "left",
     frames: [{ key: character, frame: 2 }],
@@ -181,21 +188,9 @@ function create() {
 
   cursors = this.input.keyboard.createCursorKeys();
 
+  // set message on phaser game
+  message = this.add.text(355, 25, "Walk around with the arrow keys!", { fontSize: '18px', fill: '#fff'});
 
-   
-
-  // stars.children.iterate(function (child) {
-  //     child.setBounceY(Phaser.Math.FloatBetween(0.4, 0.8));
-  // });
-
-  // this.physics.add.collider(stars, platforms);
-  // this.physics.add.overlap(player, stars, collectStar, null, this);
-
-  // scoreText = this.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#000'});
-
-  // bombs = this.physics.add.group();
-  // this.physics.add.collider(bombs, platforms);
-  // this.physics.add.collider(player, bombs, hitBomb, null, this);
 }
 
 function update() {
@@ -217,39 +212,7 @@ function update() {
     player.anims.play("stop");
   }
 
-  // if(cursors.up.isDown && player.body.touching.down) {
-  //     player.setVelocityY(-330);
-  // }
 }
 
-function collectStar(player, star) {
-  star.disableBody(true, true);
-
-  score += 10;
-  scoreText.setText("Score: " + score);
-
-  if (stars.countActive(true) === 0) {
-    stars.children.iterate(function (child) {
-      child.enableBody(true, child.x, 0, true, true);
-    });
-
-    var x =
-      player.x < 400
-        ? Phaser.Math.Between(400, 800)
-        : Phaser.Math.Between(0, 400);
-
-    var bomb = bombs.create(x, 16, "bomb");
-    bomb.setBounce(1);
-    bomb.setCollideWorldBounds(true);
-    bomb.setVelocity(Phaser.Math.Between(-200, 200), 20);
-  }
-}
-
-function hitBomb(player, bomb) {
-  this.physics.pause();
-  player.setTint(0xff0000);
-  player.anims.play("turn");
-  gameOver = true;
-}
 
   </script>

@@ -132,14 +132,28 @@ footer div {
 
 
 /* Dashboard Styling */
+
 /*parent container */
 #dashboard-container {
   display: flex;
   flex-wrap: wrap;
 }
 
+#your-pet-link-container {
+  display: flex;
+  width: 100%;
+}
+
+
 
 /* Child containers*/
+#your-pet-link  {
+  justify-content: center;
+  align-content: center;
+  width: 100%;
+  color: black;
+  padding: 20px;
+}
 #phaser-map{
   margin: 20px;
   height: 650px;
@@ -163,6 +177,8 @@ footer div {
 #chatbox-container{
 
 }
+
+
 
 
 
