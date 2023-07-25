@@ -5,6 +5,7 @@ const hbs = exphbs.create({});
 const routes = require("./controllers");
 const sequelize = require("./config/connection");
 const session = require("express-session");
+const http = require('http');
 
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
 
@@ -35,3 +36,9 @@ app.use(routes);
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log("Now listening"));
 });
+
+
+
+setInterval(() => {
+  http.get("http://example.herokuapp.com");
+}, 25 * 60 * 1000); // every 25 minutes
